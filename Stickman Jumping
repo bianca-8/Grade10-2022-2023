@@ -1,0 +1,99 @@
+import pygame
+
+pygame.init()        #initialize pygame
+SIZE = (500, 500)    #screen size
+screen = pygame.display.set_mode(SIZE)
+
+# WRITE YOUR CODE HERE.
+import math
+
+WHITE = (255,255,255)
+BLACK = (0,0,0)
+
+pygame.draw.circle(screen,WHITE,(250,100),50,5) #head
+pygame.draw.circle(screen,WHITE,(230,90),5,5) #left eye
+pygame.draw.circle(screen,WHITE,(270,90),5,5) #right eye
+pygame.draw.arc(screen,WHITE,(230,100,40,20),math.radians(180), math.radians(0),5) #mouth
+pygame.draw.line(screen,WHITE,(250,150),(250,300),5) #body
+pygame.draw.line(screen,WHITE,(250,300),(200,400),5) #left leg
+pygame.draw.line(screen,WHITE,(250,300),(300,400),5) #right leg
+pygame.draw.line(screen,WHITE,(250,200),(200,280),5) #left arm
+pygame.draw.line(screen,WHITE,(250,200),(300,280),5) #right arm
+
+pygame.display.flip()   #display the drawing on screen
+pygame.time.wait(1000)
+
+pygame.draw.rect(screen,BLACK,(0,0,500,500))
+
+pygame.display.flip()   #display the drawing on screen
+pygame.time.wait(10)
+
+#Jump 1
+pygame.draw.circle(screen,WHITE,(250,80),50,5) #head
+pygame.draw.circle(screen,WHITE,(230,70),5,5) #left eye
+pygame.draw.circle(screen,WHITE,(270,70),5,5) #right eye
+pygame.draw.arc(screen,WHITE,(230,80,40,20),math.radians(180), math.radians(0),5) #mouth
+pygame.draw.line(screen,WHITE,(250,130),(250,280),5) #body
+pygame.draw.line(screen,WHITE,(250,280),(200,380),5) #left leg
+pygame.draw.line(screen,WHITE,(250,280),(300,380),5) #right leg
+pygame.draw.line(screen,WHITE,(250,180),(200,260),5) #left arm
+pygame.draw.line(screen,WHITE,(250,180),(300,260),5) #right arm
+
+pygame.display.flip()   #display the drawing on screen
+pygame.time.wait(100)
+
+pygame.draw.rect(screen,BLACK,(0,0,500,500))
+
+pygame.display.flip()   #display the drawing on screen
+pygame.time.wait(10)
+
+pygame.draw.circle(screen,WHITE,(250,100),50,5) #head
+pygame.draw.circle(screen,WHITE,(230,90),5,5) #left eye
+pygame.draw.circle(screen,WHITE,(270,90),5,5) #right eye
+pygame.draw.arc(screen,WHITE,(230,100,40,20),math.radians(180), math.radians(0),5) #mouth
+pygame.draw.line(screen,WHITE,(250,150),(250,300),5) #body
+pygame.draw.line(screen,WHITE,(250,300),(200,400),5) #left leg
+pygame.draw.line(screen,WHITE,(250,300),(300,400),5) #right leg
+pygame.draw.line(screen,WHITE,(250,200),(200,280),5) #left arm
+pygame.draw.line(screen,WHITE,(250,200),(300,280),5) #right arm
+
+#Jump 2
+pygame.display.flip()   #display the drawing on screen
+pygame.time.wait(1000)
+
+pygame.draw.rect(screen,BLACK,(0,0,500,500))
+
+pygame.display.flip()   #display the drawing on screen
+pygame.time.wait(10)
+
+pygame.draw.circle(screen,WHITE,(250,80),50,5) #head
+pygame.draw.circle(screen,WHITE,(230,70),5,5) #left eye
+pygame.draw.circle(screen,WHITE,(270,70),5,5) #right eye
+pygame.draw.arc(screen,WHITE,(230,80,40,20),math.radians(180), math.radians(0),5) #mouth
+pygame.draw.line(screen,WHITE,(250,130),(250,280),5) #body
+pygame.draw.line(screen,WHITE,(250,280),(200,380),5) #left leg
+pygame.draw.line(screen,WHITE,(250,280),(300,380),5) #right leg
+pygame.draw.line(screen,WHITE,(250,180),(200,260),5) #left arm
+pygame.draw.line(screen,WHITE,(250,180),(300,260),5) #right arm
+
+pygame.display.flip()   #display the drawing on screen
+pygame.time.wait(100)
+
+pygame.draw.rect(screen,BLACK,(0,0,500,500))
+
+pygame.display.flip()   #display the drawing on screen
+pygame.time.wait(10)
+
+pygame.draw.circle(screen,WHITE,(250,100),50,5) #head
+pygame.draw.circle(screen,WHITE,(230,90),5,5) #left eye
+pygame.draw.circle(screen,WHITE,(270,90),5,5) #right eye
+pygame.draw.arc(screen,WHITE,(230,100,40,20),math.radians(180), math.radians(0),5) #mouth
+pygame.draw.line(screen,WHITE,(250,150),(250,300),5) #body
+pygame.draw.line(screen,WHITE,(250,300),(200,400),5) #left leg
+pygame.draw.line(screen,WHITE,(250,300),(300,400),5) #right leg
+pygame.draw.line(screen,WHITE,(250,200),(200,280),5) #left arm
+pygame.draw.line(screen,WHITE,(250,200),(300,280),5) #right arm
+
+pygame.display.flip()   #display the drawing on screen
+pygame.time.wait(1000)  #time to display in milliseconds
+pygame.quit()
