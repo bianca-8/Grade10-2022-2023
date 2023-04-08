@@ -1,0 +1,40 @@
+#2.6 Extra Question 5
+#By Bianca Bian
+#March 2, 2023
+
+# THIS QUESTION IS OPTIONAL (RECOMMENDED)
+"""
+This question will require you to do your own research on loops and if statements. Good luck!!!
+______________________________________________
+Write your own version of the find command.
+The user will input a word, you will then ask them to input a string to search for. Display the first location of that string.
+Bonus: Display all the locations of those strings.
+"""
+
+word = input("Please enter a word: ")
+string = input("Please enter a string: ")
+count = -1
+
+print()
+print("First location: ")
+
+for letters in word:
+  if letters is string:
+    count += 1
+    print(count)
+    break
+  else:
+    count += 1
+
+print()
+print("All locations: ")
+
+count = -1
+
+#Bonus
+for letters in word:
+  if letters is string:
+    count += 1
+    print(count)
+  else:
+    count += 1
