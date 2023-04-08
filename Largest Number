@@ -1,0 +1,33 @@
+number1 = float(input("Please enter a number: "))
+number2 = float(input("Please enter another number: "))
+number3 = float(input("Please enter another number: "))
+
+firstNum = 0
+secondNum = 0
+thirdNum = 0
+
+if number1 >= number2 and number1 >= number3:
+  firstNum = number1
+if number2 >= number3:
+  secondNum = number2
+  thirdNum = number3
+elif number3 >= number2:
+  secondNum = number3
+  thirdNum = number2
+elif number2 >= number1 and number2 >= number3:
+  firstNum = number2
+if firstNum == number2 and number1 >= number3:
+  secondNum = number1
+  thirdNum = number3
+elif firstNum == number2 and number3 >= number1:
+  secondNum = number3
+  thirdNum = number1
+elif number3 >= number1 and number3 >= number2:
+  firstNum = number3
+if firstNum == number3 and number1 >= number2:
+  secondNum = number1
+  thirdNum = number2
+elif firstNum == number3 and number2 >= number1:
+  secondNum = number2
+  thirdNum = number1
+print("%s, %s, %s" %(firstNum,secondNum,thirdNum))
