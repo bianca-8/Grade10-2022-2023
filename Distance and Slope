@@ -1,0 +1,32 @@
+"""
+d)	Write a program that asks the user to input two points (as shown below) and then proceeds to find the distance and the slope between the points.  You are to use the three functions from the previous parts to do so.
+
+	Enter the first coordinate: (0, 0)
+	Enter the second coordinate: (2, 1)
+	The distance between points (0,0) and (2,1) is 2.236
+	The slope between points (0,0) and (2,1) is 0.500
+"""
+import math
+
+coordinate1 = input("Enter the first coordinate: ")
+coordinate2 = input("Enter the second coordinate: ")
+
+comma1 = coordinate1.find(",")
+comma2 = coordinate2.find(",")
+
+x1 = int(coordinate1[1:comma1])
+x2 = int(coordinate2[1:comma2])
+y1 = int(coordinate1[comma1+1:-1])
+y2 = int(coordinate2[comma2+1:-1])
+
+def slope (x1,y1,x2,y2):
+  slope = (y2-y1)/(x2-x1)
+  return slope
+
+print("The slope between points %s and %s is %.3f." %(coordinate1,coordinate2,slope(x1,y1,x2,y2)))
+
+def distance (x1,y1,x2,y2):
+  distance = math.sqrt(((x2-x1)**2)+((y2-y1)**2))
+  return distance
+
+print("The distance between points %s and %s is %.3f." %(coordinate1,coordinate2,distance(x1,y1,x2,y2)))
