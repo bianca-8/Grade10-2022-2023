@@ -1,0 +1,173 @@
+#Name: Bianca Bian
+#Date: March 29, 2023
+#Course Code: ICS3U1-04
+#Description: This code determines if 2 circles collide or if a point is inside, outside or on a circle.
+
+#import math for distance formula
+import math
+
+#Coordinates of set circle
+CENTRE_X = 20
+CENTRE_Y = 50
+RADIUS = 20
+
+#values for default radius
+newRadius = -1
+newRadiusInput = "1" #radius that is inputted, will be == to newRadius later
+
+#Inputted coordinate
+newCircle = input("Please enter a coordinate in the form \"(x,y) radius\" or \"(x,y)\": ")
+
+
+#Checks if something is inputted
+if newCircle == "":
+  print("Please enter a coordinate. Try again")
+
+#Gets rid of extra characters at front and back
+else:
+  if newCircle[0].isdigit() == False and newCircle[0] != "(":
+    newCircle = newCircle[1:]
+  if newCircle[-1].isdigit() == False and newCircle[-1] != ")":
+    newCircle = newCircle[:-1]
+
+  #Find parts of the input
+  comma = newCircle.find(",")
+  openBracket = newCircle.find("(")
+  closeBracket = newCircle.find(")")
+  space = newCircle.find(" ")
+
+  if newCircle[comma+1] == " ":
+    newCircle = newCircle[:comma+1] + newCircle[comma + 2:]
+  
+  #Error for "(," or ",)"
+  if newCircle.count("(,") >= 1 or newCircle.count(",)") >= 1:
+    newX = ""
+    newY = ""
+  
+  #x,y)r - has comma and close bracket
+  if newCircle.count(",") >= 1 and newCircle.count(")") >= 1:
+    newX = newCircle[0:comma]
+    newY = newCircle[comma + 1:closeBracket]
+
+    #checks if last character is ")", meaning no radius
+    if newCircle[-1] == ")":
+      newY = newCircle[comma + 1:-1]
+    elif newCircle[-1] == ")":
+      closeBracket = -2
+
+    #character after ")", meaning has radius
+    elif newCircle[closeBracket+1] == " ":
+      newRadiusInput = newCircle[closeBracket + 2:]
+      newRadius = 1
+    else:
+      newRadiusInput = newCircle[closeBracket + 1:]
+      newRadius = 1
+  
+  #x,y r - has comma and no close bracket
+  elif newCircle.count(",") >= 1 and newCircle.count(")") == 0 and newCircle.count(" ") >= 0 and newCircle.count("  ") == 0: 
+    newX = newCircle[0:comma]
+    newY = newCircle[comma + 1:]
+    
+    #checks for extra spaces in y coordinate, meaning there is a radius
+    if newCircle[comma + 1:].count(" ") >= 1:
+      space1 = newY.find(" ") + len(newCircle[0:comma]) + 1
+      newY = newCircle[comma + 1:space1]
+      newRadiusInput = newCircle[space1 + 1:]
+      newRadius = 1
+      
+      if newRadiusInput.count(" ") >= 1:
+        newX = ""
+        newY = ""
+        newRadius = -1
+
+  #x y r - no comma or close bracket
+  elif newCircle.count(",") == 0 and newCircle.count(" ") >= 1:
+    newX = newCircle[0:space]
+    newY = newCircle[space + 1:]
+    space1 = newCircle.find(" ")
+    
+    #checks for extra spaces in y coordinate, meaning there is a radius
+    if newCircle[space + 1:].count(" ") >= 1:
+      space2 = newY.find(" ") + len(newCircle[0:space]) + 1
+      newY = newCircle[space1 + 1:space2]
+      newRadiusInput = newCircle[space1 + 1:]
+      newRadius = 1
+      if str(newRadiusInput.find(" ")+1).isdigit() == False:
+        newX = ""
+        newY = ""
+        newRadius = -1
+
+  #values if x and y don't exist
+  else:
+    newX = ""
+    newY = ""
+    newX1 = ""
+    newY1 = ""
+  
+  #Checks if the x, y and radius are valid
+  if newX.isalpha() or newY.isalpha() or newRadiusInput.isalpha():
+    print("Please do not enter letters or symbols.")
+  elif newX == "" or newY == "" or newX == " " or newY == " ":
+    print("Please enter a valid coordinate.")
+
+  #continues if x and y are not letters, blank or spaces
+  else:
+    #Takes out extra non-digits before and after the x, y and radius values
+    if newX[0].isdigit() == False and newX[0] != "-":
+      newX = newX[1:]
+    if newX[-1].isdigit() == False:
+      newX = newX[0:-1]
+    if newY[0].isdigit() == False and newY[0] != "-":
+      newY = newY[1:]
+    if newY[-1].isdigit() == False:
+      newY = newY[0:-1]
+
+    #Checks if x and y are numbers
+    if newX.isdigit() == False or newY.isdigit() == False:
+      print("Please enter numberical values for x and y.")
+    else:
+      #converts the inputted radius to newRadius
+      if newRadiusInput != "":
+        if newRadiusInput[0].isdigit() == False:
+          newRadius = newRadiusInput[1:]
+        if newRadiusInput[-1].isdigit() == False:
+          newRadius = newRadiusInput[0:-1]
+  
+        #negative radius (error message since it doesn't exist)
+        if newRadiusInput[0] == "-":
+          print("Please enter a radius greater than 0. Try again.")
+      
+      #getting rid of negative x and y (for telling if they are digits or not)
+      if newX[0] == "-":
+        newX1 = newX[1:]
+      else:
+        newX1 = newX
+      if newY[0] == "-":
+        newY1 = newY[1:]
+      else:
+        newY1 = newY
+    
+      #Calculates distance if x,y and radius are numbers
+      if newX1.isdigit() and newY1.isdigit():
+        newX = int(newX)
+        newY = int(newY)
+        newRadius = int(newRadius)
+        distance = math.sqrt((CENTRE_X - newX) ** 2 + (CENTRE_Y - newY) ** 2)
+          
+        #Calculate collisions in circles
+        if newRadius > -1 and RADIUS + newRadius > distance:
+          print("The two circles collide.")
+        elif newRadius > -1 and RADIUS + newRadius < distance:
+          print("The two circles do not collide.")
+        
+        #Calculate where point is
+        if newRadius == -1 and distance == RADIUS:
+          print("The point is on the circle")
+        elif newRadius == -1 and distance < RADIUS:
+          print("The point is inside the circle.")
+        elif newRadius == -1 and distance > RADIUS:
+          print("The point is outside the circle.")
+      
+      #error message for if x or y still don't exist
+      if str(newX).isdigit() == False or str(newY).isdigit() == False:
+        print("Please enter a valid coordinate.")
