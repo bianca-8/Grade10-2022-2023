@@ -1,0 +1,21 @@
+import pygame
+
+pygame.init()        #initialize pygame
+length = 300
+width = 300
+SIZE = (length, width)    #screen size
+screen = pygame.display.set_mode(SIZE)
+
+# WRITE YOUR CODE HERE.
+BLUE = (0,0,255)
+BLACK = (0,0,0)
+
+newLength = length/5
+newWidth = width/5
+
+pygame.draw.rect(screen,BLUE,(0,0,length,width)) #background
+pygame.draw.rect(screen,BLACK,((length/2)-newLength/2, (width/2)-newWidth/2, newLength, newWidth)) #rectangle
+
+pygame.display.flip()   #display the drawing on screen
+pygame.time.wait(10000)  #time to display in milliseconds
+pygame.quit()
