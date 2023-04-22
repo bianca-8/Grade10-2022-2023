@@ -1,0 +1,65 @@
+"""
+Write a program that colours each 5 by 5 block of pixels of the screen with a random colour of red, green or blue.  Hint:  Use a nested loop (loop within a loop)
+Modify it so that the next block of pixels has a 50% chance of being the same colour as the previous colour.
+For example, if the last block was red, then 50% chance of being red, 25% for both green and blue.
+"""
+
+import pygame
+import random
+pygame.init()
+screen = pygame.display.set_mode((400, 400))
+pygame.display.set_caption('Hello World!')
+
+#write your code here
+
+for y in range(80):
+  for x in range(80):
+    RED = (255,0,0)
+    GREEN = (0,255,0)
+    BLUE = (0,0,255)
+    COLOR = random.choice(["RED","GREEN","BLUE"])
+  
+    pygame.draw.rect(screen,COLOR,(x * 5,y * 5,5,5))
+
+
+pygame.display.flip()
+pygame.time.wait(5000)
+pygame.quit()
+
+
+#################################################
+
+
+import pygame
+import random
+pygame.init()
+screen = pygame.display.set_mode((400, 400))
+pygame.display.set_caption('Hello World!')
+
+#write your code here
+
+for y in range(80):
+  for x in range(80):
+    RED = (255,0,0)
+    GREEN = (0,255,0)
+    BLUE = (0,0,255)
+    COLOR = random.choice(["RED","GREEN","BLUE"])
+    COLOR2 = COLOR
+
+    choice = random.choice(["same","different"])
+
+    if choice == "same":
+      COLOR2 = COLOR
+    elif COLOR == RED:
+      COLOR2 = (random.choice(["0,255,0)","(0,0,255"]))
+    elif COLOR == BLUE:
+      COLOR2 = (random.choice(["255,0,0)","(0,255,0"]))
+    elif COLOR == GREEN:
+      COLOR2 = (random.choice(["255,0,0)","(0,255,0"]))
+    
+    pygame.draw.rect(screen,COLOR2,(x * 5,y * 5,5,5))
+
+
+pygame.display.flip()
+pygame.time.wait(5000)
+pygame.quit()
