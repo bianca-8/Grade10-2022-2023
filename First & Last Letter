@@ -1,0 +1,19 @@
+"""
+Write a program that asks for a string from the user.  Output the first and last letters on one line, the second and second last letters on the second line, etc…
+Example:     	Please enter a string:   blah
+                    	Output:
+                              b      	h
+                              l       a
+                              a      	l
+                              h      	b
+"""
+
+string = input("Please enter a string: ")
+
+place = 1
+
+for letter in string:
+  first = string[-1+place]
+  last = string[0-place]
+  place += 1
+  print(first,"\t",last)
