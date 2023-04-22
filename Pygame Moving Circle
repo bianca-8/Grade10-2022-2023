@@ -1,0 +1,28 @@
+"""
+Use a for loop to write a program that moves a circle across a screen, horizontally, in pygame.
+"""
+
+import pygame
+pygame.init()
+screen = pygame.display.set_mode((400, 300))
+
+#Write your code here
+x = 0
+
+WHITE = (255,255,255)
+BLACK = (0,0,0)
+
+pygame.draw.circle(screen,WHITE,(x,150),50)
+pygame.display.flip()
+pygame.time.wait(100)
+
+while x < 445:
+  x = x + 10
+  pygame.display.flip()
+  pygame.time.wait(100)
+  pygame.draw.rect(screen,BLACK,(0,0,400,300))
+  pygame.draw.circle(screen,WHITE,(x,150),50)
+
+pygame.display.flip()
+pygame.time.wait(5000)
+pygame.quit()
