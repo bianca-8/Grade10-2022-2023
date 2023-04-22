@@ -1,0 +1,13 @@
+"""
+Write a program that displays stars in the number of rows and columns entered by the user.
+"""
+
+star = ""
+
+row = int(input("Please enter the amount of stars in a row: "))
+column = int(input("Please enter amount of stars in a column: "))
+
+for line in range(column):
+  for i in range(row + 1):
+    star = i * "*"
+  print(star)
