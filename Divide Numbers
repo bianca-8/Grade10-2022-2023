@@ -1,0 +1,22 @@
+"""
+Use a while loop to write a program that asks the user for a number.  
+Your program displays how many times that number is divisible by 2.
+
+	For example:
+	Please enter your number.  24
+	24 is divisible 3 times.
+
+	Hint:  Remember the modulus operator (%).
+"""
+
+time = 0
+
+while True:
+  input = int(input("Please enter your number: "))
+  number = input
+  while number % 2 != 1:
+    number = number / 2
+    time += 1
+  break
+
+print(input,"is divisible",time,"times.")
