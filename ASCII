@@ -1,0 +1,67 @@
+#Default
+count = 1 # only used to display 10 characters on a line
+for i in range(ord('A'), ord('Z') + 1):  # characters can't count, but i can count from 65 to 90
+    print("%s (%i)" %(chr(i), i), end = " ")  # remember end =
+    if count % 10 == 0: # for display purposes
+        print()
+    count += 1
+
+print("\n")
+
+#Level 2
+count = 1 # only used to display 10 characters on a line
+for i in range(ord('a'), ord('z') + 1):  # characters can't count, but i can count from 97 to 122
+    print("%s (%i)" %(chr(i), i), end = " ")  # remember end =
+    if count % 10 == 0: # for display purposes
+        print()
+    count += 1
+
+print("\n")
+
+#Level 3
+enter1 = input("Please enter an uppercase letter: ")
+place1 = 97
+
+for i in range(ord(enter1)-65):
+  place1 += 1
+print("Output: %s" %chr(place1))
+
+print("\n")
+
+#Level 4
+enter2 = input("Please enter a string: ")
+word2 = ""
+place2 = 65
+
+for letter2 in enter2:
+  if ord(letter2) >= 97 and ord(letter2) <= 122:
+    for i in range(ord(letter2)-97):
+      place2 += 1
+    word2 = word2 + chr(place2)
+    place2 = 65
+  else:
+    word2 = word2 + letter2
+print("Output: %s" %word2)
+
+print("\n")
+
+#Level 4+
+enter3 = input("Please enter a string: ")
+word3 = ""
+
+for letter3 in enter3:
+  if ord(letter3) >= 97 and ord(letter3) <= 122:
+    place3 = 65
+    for i in range(ord(letter3)-97):
+      place3 += 1
+    word3 = word3 + chr(place3)
+    place3 = 65
+  elif ord(letter3) >= 65 and ord(letter3) <= 90:
+    place3 = 97
+    for i in range(ord(letter3)-65):
+      place3 += 1
+    word3 = word3 + chr(place3)
+    place3 = 97
+  else:
+    word3 = word3 + letter3
+print("Output: %s" %word3)
