@@ -1,0 +1,15 @@
+"""
+Write a program that asks the user to input a word.  The program then rotates the characters of the word to create a square pattern of letters. 
+ 
+For example:  help
+                    	elph
+                    	lphe
+                    	phel
+"""
+
+word = input("Please enter a word: ")
+
+for letter in word:
+  first = word[0]
+  word = word[1:] + first
+  print(word)
