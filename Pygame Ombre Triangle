@@ -1,0 +1,26 @@
+import pygame
+
+pygame.init()
+screen = pygame.display.set_mode((500, 500))
+pygame.display.set_caption('Hello World!')
+
+#write your code here
+RED = 0
+GREEN = 255
+change = 1.5
+
+for i in range(500):
+  RED += change
+  GREEN -= change
+  colour = (RED,GREEN,0)
+  
+  if RED == 255 or RED == 0 or GREEN == 255 or GREEN == 0:
+    change = -change
+  
+  for j in range(i+2):
+    pygame.draw.rect(screen,colour,(i, 500-j, 1, 1))
+    pygame.display.flip()
+
+
+pygame.time.wait(5000)
+pygame.quit()
