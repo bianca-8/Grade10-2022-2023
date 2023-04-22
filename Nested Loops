@@ -1,0 +1,44 @@
+#April 20, 2023
+#ICS3U1-04
+
+#a)
+for i in range(10):
+  for j in range(i + 1):
+    print("*", end = "")
+  print()
+
+print()
+
+#b)
+for i in range(10):
+  for j in range(10 - i):
+    print("*", end = "")
+  print()
+
+print()
+
+#c)
+for i in range(10):
+  for j in range(i + 1):
+    print(j+1, end = "")
+  print()
+
+print()
+
+#d)
+for i in range(10):
+  for j in range(10-i,1,-1):
+    print(j-1, end = "")
+  print()
+
+print()
+
+#d)
+for i in range(10):
+  for j in range(i + 1):
+    print("*", end = "")
+  print()
+for i in range(10):
+  for j in range(10 - i):
+    print("*", end = "")
+  print()
