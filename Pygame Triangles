@@ -1,0 +1,29 @@
+import pygame
+import random
+pygame.init()
+screen = pygame.display.set_mode((600, 600))
+
+#write your code here
+RED = (255,0,0)
+BLACK = (0,0,0)
+red = 255
+
+for i in range(30):
+  pygame.draw.rect(screen,(random.randint(0,255), random.randint(0,255), random.randint(0,255)),(10 * i,0,10,10 * (i + 1)))
+  pygame.draw.rect(screen,(random.randint(0,255), random.randint(0,255), random.randint(0,255)),(10 * i,0,10,10 * (i + 1)),1)
+
+for i in range(30):
+  pygame.draw.rect(screen,(random.randint(0,255), random.randint(0,255), random.randint(0,255)),(10 * i + 300,300 - (10 * (i + 1)),10,10 * (i + 1)))
+  pygame.draw.rect(screen,(random.randint(0,255), random.randint(0,255), random.randint(0,255)),(10 * i + 300,300 - (10 * (i + 1)),10,10 * (i + 1)),1)
+
+for i in range(30):
+  pygame.draw.rect(screen,(255,255-8*i,0),(0,10 * i + 300,10 * (i + 1),10))
+  pygame.draw.rect(screen,(0,8*i,0),(0,10 * i + 300,10 * (i + 1),10),1)
+
+for i in range(30):
+  pygame.draw.rect(screen,(0,255,255-8*i),(300,10 * i + 300,300 - 10 * (i + 1),10))
+  pygame.draw.rect(screen,(255,255-8*i,255),(300,10 * i + 300,300 - 10 * (i + 1),10),1)
+
+pygame.display.flip()
+pygame.time.wait(6000)
+pygame.quit()
