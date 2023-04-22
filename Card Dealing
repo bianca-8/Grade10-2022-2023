@@ -1,0 +1,30 @@
+"""
+Write a program that simulates the dealing of one card from a deck of cards.
+"""
+
+import random
+
+type = random.choice(["Hearts","Spades","Clubs","Diamonds"])
+
+number = random.randrange(1,15)
+
+if number == 11:
+  number = "Jack"
+
+if number == 12:
+  number = "Queen"
+
+if number == 13:
+  number = "King"
+
+if number == 14:
+  number = "Ace"
+
+if number == 15:
+  number = "Joker"
+
+if number != 15:
+  print("The card is %s of %s." %(number,type))
+
+else:
+  print("The card is a joker.")
