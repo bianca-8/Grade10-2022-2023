@@ -1,0 +1,30 @@
+"""
+Write a program that simulates the following:
+100 lockers in a school all start with their doors closed.
+A student walks from the first locker to the last, opening each door.
+
+A second student then walks from the first locker to the last, changing the state of every second door, starting from the second door. In other words, if a door is open, they close it.  If the door is closed, they open it.
+
+The process continues, the third student changing the state of every third locker starting at the third locker, etc...until 100 students have passed through.
+
+Output the state of each of the 100 lockers.
+Also, display which lockers are open, for example: 1 3 8 etc...
+"""
+
+locker = []
+
+for i in range(100):
+  locker.append("closed") #Starting
+
+for l in range(1,101):
+  for j in range(l,101,l):
+    if locker[j-1] == "open":
+      locker[j-1] = "closed"
+    else:
+      locker[j-1] = "open"
+
+print(locker)
+print()
+for q in range(100):
+  if locker[q] == "open":
+    print(q+1, end = " ")
