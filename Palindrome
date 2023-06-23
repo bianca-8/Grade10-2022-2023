@@ -1,0 +1,20 @@
+"""
+Write a program that asks the user for a word, test if it is a palindrome (same forward as backwards). You are not allowed to reverse the string unless you write a method to do so!!!
+"""
+
+word = input("Please enter a word: ")
+count = 0
+backCount = -1
+
+for i in word:
+  if word[count] == word[backCount]:
+    palindrome = True
+  else:
+    palindrome = False
+  count += 1
+  backCount -= 1
+
+if palindrome == True:
+  print("The word is a palindrome.")
+else:
+  print("The word is not a palindrome.")
