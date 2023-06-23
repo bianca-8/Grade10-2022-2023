@@ -1,0 +1,43 @@
+"""
+Write a program that merges two sorted Lists into one new sorted List (without using sort). You may use any values you want of any length.  But it should work for any length of List.
+"""
+list1 = []
+list2 = []
+newList = []
+count1 = 0
+count2 = 0
+
+while True:
+  value1 = input("Please enter a value: ")
+  if value1 != "done":
+    list1.append(value1)
+  else:
+    break
+
+print()
+
+while True:
+  value2 = input("Please enter a value: ")
+  if value2 != "done":
+    list2.append(value2)
+  else:
+    break
+
+print()
+
+while True:
+  if list1[count1] < list2[count2]:
+    newList.append(list1[count1])
+    count1 += 1
+    if len(list1) == count1:
+      newList += list2[count2:]
+      break
+  
+  else:
+    newList.append(list2[count2])
+    count2 += 1
+    if len(list2) == count2:
+      newList += list1[count1:]
+      break        
+      
+print(newList)
