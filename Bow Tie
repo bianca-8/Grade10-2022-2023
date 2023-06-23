@@ -1,0 +1,14 @@
+# Question 5
+# This is a challenging question.
+# See question on Brightspace --> Unit 4 --> Review Questions
+# Input only accepts odd numbers
+
+H = int(input("Please enter the height: "))
+starRow = 1
+
+for i in range(H):
+  print("*" * starRow + " " * int(2*H - 2*starRow) + "*" * starRow)
+  if i >= (H//2):
+    starRow -= 2
+  else:
+    starRow += 2
