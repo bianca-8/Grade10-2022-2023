@@ -1,0 +1,9 @@
+"""
+Write a program that asks the user to input two numbers. Your program should then display all the numbers from the first number to the second.
+"""
+
+num1 = int(input("Please enter a number: "))
+num2 = int(input("Please enter another number: "))
+
+for i in range(num1,num2+1):
+  print(i)
