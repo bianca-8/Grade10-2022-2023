@@ -1,0 +1,27 @@
+"""
+Write a program that asks the user to input a number. Your program should then display if that number is part of the Fibonacci Sequence or not. If it is, display the term number. Not sure what the Fibonacci Sequence is?  Look it up.
+"""
+
+num = int(input("Please enter a number: "))
+
+fib = 0
+fibNum1 = 1
+fibNum2 = 1
+count = 1
+
+for i in range(num + 1):
+  fib += fibNum2
+  fibNum2 = fibNum1
+  fibNum1 = fib
+  count += 1
+  if num == fib:
+    count += 1
+    yes = True
+    break
+  elif num != fib:
+    yes = False
+
+if yes == True:
+  print("The number is part of the Fibbonacci Sequence and the term number is %i" %count)
+else:
+  print("The number is not part of the Fibbonacci Sequence.")
