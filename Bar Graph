@@ -1,0 +1,26 @@
+import random
+
+die1 = [1, 2, 3, 4, 5, 6]
+die2 = [1, 2, 3, 4, 5, 6]
+seven = 0
+times = []
+
+for i in range(12):
+  times.append(0)
+
+for i in range(1000):
+  num1 = random.choice(die1)
+  num2 = random.choice(die2)
+  sum = num1 + num2
+  times[sum-1] += 1
+  if sum == 7:
+    seven += 1
+
+print("A 7 was rolled %i times." %seven) #Level 2
+print()
+
+print(times) #Level 3
+print()
+
+for place in range(len(times)):
+  print(place+1, "-- %i" %times[place], "*" * (times[place]//10)) #Level 4,4+
