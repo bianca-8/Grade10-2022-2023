@@ -1,0 +1,9 @@
+Prime, Composite and Ugly Numbers
+
+Program that reads an unknown number of numbers from the file called random.dat. Outputs how many of the numbers are:
+
+a) prime numbers
+
+b) composite numbers (not primes)
+
+c) ugly numbers (any number who has only the prime factors of 2, 3 and 5)
